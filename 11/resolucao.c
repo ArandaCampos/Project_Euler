@@ -37,7 +37,7 @@ long int greatest_product(int matriz[20][20], int adjacent)
      *  a * b = b * a
      *  sentidos up == down e left == right
      */
-    int directions[4][6] = {
+    int directions[4][2] = {
         {  0, 1}, // horizontal
         {  1, 0}, // vertical
         {  1, 1}, // diagonal negativa (de cima pra baixo ↓)
