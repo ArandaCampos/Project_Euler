@@ -21,9 +21,9 @@ long int highly_divisible_triangular(int divisors)
      *  a % b == 0 →  b * c = a →  a % c == 0 | a, b, c, E N*
      */
 
-    long int number = pa(1, divisors, divisors), count, limit, aux = divisors;
+    long int number = pa(1, divisors, divisors), count, limit;
 
-    while(count < divisors)
+    for(long int aux = divisors ;count < divisors; aux++)
     {
         number = pa(1, aux, aux);
         limit = number, count = 0;
@@ -32,7 +32,7 @@ long int highly_divisible_triangular(int divisors)
                 limit = number / i;
                 count += 2;
             }
-        if (count < divisors) aux ++;
+        //if (count < divisors) aux ++;
     }
     return number;
 }
