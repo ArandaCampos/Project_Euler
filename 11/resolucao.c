@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-long int greatest_product(int[20][20], int);
+long int greatest_product(int[20][20], int, int);
 
 int main()
 {
@@ -26,11 +26,11 @@ int main()
         {20, 73, 35, 29, 78, 31, 90,  1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57,  5, 54},
         { 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48},
     };
-    printf("%ld\n", greatest_product(matriz, 4));
+    printf("%ld\n", greatest_product(matriz, 20, 4));
     return 0;
 }
 
-long int greatest_product(int matriz[20][20], int adjacent)
+long int greatest_product(int matriz[20][20], int grid, int adjacent)
 {
     /*
      * Pela propriedade comutativa da multiplicação
@@ -48,12 +48,12 @@ long int greatest_product(int matriz[20][20], int adjacent)
 
     for (int d = 0; d < 4; d++)
     {
-        if (directions[d][0] == -1) i = 4; else i = 0;
-        if (directions[d][0] == 1) max_i = 16; else max_i = 20;
-        if (directions[d][1] == 1) max_j = 16; else max_j = 20;
+        if (directions[d][0] == -1) i = adjacent; else i = 0;
+        if (directions[d][0] == 1) max_i = grid - adjacent; else max_i = grid;
+        if (directions[d][1] == 1) max_j = grid - adjacent; else max_j = grid;
         for (; i < max_i; i++)
         {
-            if (directions[d][1] == -1) j = 4; else j = 0;
+            if (directions[d][1] == -1) j = adjacent; else j = 0;
             for (; j < max_j; j++)
             {
                 product = 1;
