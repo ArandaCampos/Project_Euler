@@ -3,11 +3,11 @@
 #include <inttypes.h>
 
 uint64_t factorial(int n, int less);
-uint64_t sequence(int n);
+uint64_t sequence(int grid);
 
 int main()
 {
-    printf("%" PRIu64 "\n", sequence(40));
+    printf("%" PRIu64 "\n", sequence(20));
     return 0;
 }
 
@@ -29,7 +29,7 @@ uint64_t sequence(int n)
 
     int i = 2;
     uint64_t fn = 2;
-    while (i <= n / 2)
+    while (i <= n)
     {
         fn = fn * factorial(2 * i, 2 * (i - 1)) / (i * i);
         i++;
