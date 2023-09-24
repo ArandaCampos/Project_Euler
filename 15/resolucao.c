@@ -19,7 +19,7 @@ uint64_t factorial(int n, int less)
     return factorial;
 }
 
-uint64_t sequence(int n)
+uint64_t sequence(int grid)
 {
     /*
      * f(1) = 2
@@ -27,12 +27,12 @@ uint64_t sequence(int n)
      *
      */
 
-    int i = 2;
+    int n = 2;
     uint64_t fn = 2;
-    while (i <= n)
+    while (n <= grid)
     {
-        fn = fn * factorial(2 * i, 2 * (i - 1)) / (i * i);
-        i++;
+        fn = fn * factorial(2 * n, 2 * (n - 1)) / (n * n);
+        n++;
     }
     return fn;
 }
