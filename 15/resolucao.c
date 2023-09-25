@@ -19,14 +19,15 @@ long int sequence(int grid)
      * f(n + 1) = f(n)             * (2n+1) * (2n+2) / (                  n+1) * (                   n+1)
      *
      * f(n) = f(n-1) * 2n * (2n-1) / n * n
-     *
+     * f(n) = f(n-1) * 2(2n-1) / n
+     * f(n) = f(n-1) * (4n-2) / n
      */
 
     int n = 2;
     long int fn = 2;
     while (n <= grid)
     {
-        fn = fn * 2 * n * (2 * n - 1) / (n * n);
+        fn = fn * (4 * n - 2)/ n;
         n++;
     }
     return fn;
