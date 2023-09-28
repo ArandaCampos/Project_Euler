@@ -3,7 +3,7 @@
 void free_bigint(pBigint a)
 {
     pBigint aux;
-	if (a != NULL) aux = a->next; else return;
+    if (a != NULL) aux = a->next; else return;
 
     free(a);
     free_bigint(aux);
