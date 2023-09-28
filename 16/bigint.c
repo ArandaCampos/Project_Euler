@@ -5,8 +5,8 @@ void free_bigint(pBigint a)
     pBigint aux;
 	if (a != NULL) aux = a->next; else return;
 
-	free(a);
-	free_bigint(aux);
+    free(a);
+    free_bigint(aux);
 }
 
 pBigint insert(pBigint bigint, char n)
