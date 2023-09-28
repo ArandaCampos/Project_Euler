@@ -7,7 +7,7 @@ int main()
 
     for (int i = 0; i < 1000; i++) x = times(x, 2);
 
-    printf("%d\n", sum(x));
+    printf("%d\n", sum_digits(x));
 
     free_bigint(x);
 

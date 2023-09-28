@@ -11,7 +11,7 @@
 
     void free_bigint(pBigint);
     pBigint insert(pBigint, char);
-    int sum(pBigint);
+    int sum_digits(pBigint);
     pBigint times(pBigint, int);
 
 #endif

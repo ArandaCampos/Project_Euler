@@ -23,7 +23,7 @@ pBigint insert(pBigint bigint, char n)
     return bigint;
 }
 
-int sum(pBigint a){
+int sum_digits(pBigint a){
     int sum = 0;
     for(; a != NULL; a = a->next) sum += a->digit;
 
