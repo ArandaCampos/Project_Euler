@@ -42,12 +42,10 @@ int fellOnTheFirstDay(int yearStart, int yearFinish, int dayOfWeek)
     };
 
     while (year < yearStart){
-        if ( isLeapYear(year) ) day += 2 % 7;
-        else day += 1;
+        if ( isLeapYear(year) ) day = (day + 2) % 7;
+        else day = (day + 1) % 7;
         year++;
     }
-
-    day = day % 7;
 
     while (year <= yearFinish){
         for (int i = 0; i < 12; i++){
